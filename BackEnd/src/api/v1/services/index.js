@@ -1,1 +1,2 @@
-export { ProductsService } from './products.service.js';
+export * from './base.service.js';
+export * from './products.service.js';
