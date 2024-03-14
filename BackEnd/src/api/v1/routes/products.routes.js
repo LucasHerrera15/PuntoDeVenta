@@ -10,12 +10,12 @@ export class ProductsRouter {
         const service = new ProductsService();
         const controller = new ProductsController({service});
 
-        router.get('/', controller.getAllProducts)
+        router
+        .get('/', controller.getAllProducts)
+        .get('/:id', controller.getProductById)
 
-        router.get('/:id', controller.getProductById);
-
-        router.post('/', controller.createProduct);
-
+        router.post('/', controller.createProduct)
+     
         router.patch('/:id', controller.updateProductById);
 
         router.delete('/:id', controller.deleteProductById);
