@@ -7,4 +7,4 @@ const app = express();
 
 app.use('/api/v1', Routes())
 
-app.listen(process.env.PORT, console.log(`Server running on: http://localhost:${process.env.PORT}/api/v1`));
+app.listen(process.env.PORT, console.log(`Server running on: http://localhost:${process.env.PORT}/api/v1`)); 
