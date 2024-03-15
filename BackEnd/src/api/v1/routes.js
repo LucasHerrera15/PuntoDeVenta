@@ -1,5 +1,5 @@
 import express from 'express';
-import { ProductsRouter } from './routes/index.js'
+import { ProductsRouter, SalesRouter } from './routes/index.js'
 
 export const Routes = () => {
     
@@ -11,6 +11,7 @@ export const Routes = () => {
         .use(express.urlencoded({extended: true}))
 
     apiRouter.use('/products', ProductsRouter.routes());
+    apiRouter.use('/sales', SalesRouter.routes());
 
     router.use('/', apiRouter);
 
