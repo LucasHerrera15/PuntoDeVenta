@@ -36,4 +36,4 @@ export class SalesController {
       .deleteById(id)
       .then((data) => { res.status(200).json(data) })
   }
-};
+}

@@ -1,25 +1,25 @@
-import express from 'express';
+import express from 'express'
 
-import {ProductsController} from '../controllers/index.js';
-import { ProductsService } from '../services/index.js';
+import { ProductsController } from '../controllers/index.js'
+import { ProductsService } from '../services/index.js'
 
 export class ProductsRouter {
-    static routes(){
-        const router = express.Router();
+  static routes () {
+    const router = express.Router()
 
-        const service = new ProductsService();
-        const controller = new ProductsController({service});
+    const service = new ProductsService()
+    const controller = new ProductsController({ service })
 
-        router
-        .get('/', controller.getAllProducts)
-        .get('/:id', controller.getProductById)
+    router
+      .get('/', controller.getAllProducts)
+      .get('/:id', controller.getProductById)
 
-        router.post('/', controller.createProduct)
-     
-        router.patch('/:id', controller.updateProductById);
+    router.post('/', controller.createProduct)
 
-        router.delete('/:id', controller.deleteProductById);
+    router.patch('/:id', controller.updateProductById)
 
-        return router;
-    }
+    router.delete('/:id', controller.deleteProductById)
+
+    return router
+  }
 }

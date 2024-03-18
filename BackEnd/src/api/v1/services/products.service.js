@@ -1,7 +1,5 @@
-import { BaseService } from "./index.js";
+import { BaseService } from './index.js'
 
-export class ProductsService extends BaseService{
-    constructor(){
-        super();
-    }
+export class ProductsService extends BaseService {
+
 }
