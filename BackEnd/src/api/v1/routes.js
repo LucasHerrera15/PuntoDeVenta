@@ -1,18 +1,19 @@
-import express from 'express';
-import { ProductsRouter } from './routes/index.js'
+import express from 'express'
+import { ProductsRouter, SalesRouter, ClientRouter } from './routes/index.js'
 
 export const Routes = () => {
-    
-    const router = express.Router();
-    const apiRouter = express.Router();
-    
-    router
-        .use(express.json())
-        .use(express.urlencoded({extended: true}))
+  const router = express.Router()
+  const apiRouter = express.Router()
 
-    apiRouter.use('/products', ProductsRouter.routes());
+  router
+    .use(express.json())
+    .use(express.urlencoded({ extended: true }))
 
-    router.use('/', apiRouter);
+  apiRouter.use('/products', ProductsRouter.routes())
+  apiRouter.use('/sales', SalesRouter.routes())
+  apiRouter.use('/clients', ClientRouter.routes())
 
- return router;
+  router.use('/', apiRouter)
+
+  return router
 }
